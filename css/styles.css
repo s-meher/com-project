@@ -1,0 +1,17 @@
+:root { --max: 72ch; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; line-height: 1.6; }
+header, footer { padding: 1rem; border-bottom: 1px solid #ddd; }
+footer { border-top: 1px solid #ddd; border-bottom: 0; }
+nav ul { list-style: none; padding: 0; display: flex; gap: 1rem; flex-wrap: wrap; }
+nav a { text-decoration: none; }
+main { padding: 1rem; }
+article, .toc { max-width: var(--max); margin-inline: auto; }
+.lede { font-size: 1.1rem; }
+.toc ol { padding-left: 1.25rem; }
+aside { background: #f7f7f7; padding: 0.75rem; border-left: 4px solid #bbb; margin: 1rem 0; }
+figure { margin: 1rem 0; }
+img { max-width: 100%; height: auto; }
+.module-nav { display: flex; justify-content: space-between; margin-top: 2rem; }
+.skip-link { position: absolute; left: -9999px; }
+.skip-link:focus { left: 1rem; top: 1rem; background: #fff; padding: 0.5rem; border: 1px solid #000; }
