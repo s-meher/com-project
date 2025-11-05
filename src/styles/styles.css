@@ -1,0 +1,173 @@
+:root {
+  --maxw: 72rem;
+  --gap: 1rem;
+  --radius: 10px;
+  --bg: #f5f7fb;
+  --ink: #1b1b1b;
+  --ink-muted: #4a4a4a;
+  --brand: #0a6cff;
+  --brand-ink: #fff;
+  --surface: #f5f7fb;
+  --border: #e2e6ef;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+.site-header,
+.site-footer {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.site-footer {
+  border-top: 1px solid var(--border);
+  border-bottom: 0;
+}
+.site-header .site-nav ul,
+.site-footer p,
+main {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  padding: 0;
+  margin: 0;
+}
+.site-nav a {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+.site-nav a[aria-current='page'] {
+  background: var(--brand);
+  color: var(--brand-ink);
+}
+.template-link a {
+  border: 1px solid var(--border);
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+}
+h1 {
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  margin: 1rem 0 0.5rem;
+}
+h2 {
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  margin: 1.5rem 0 0.5rem;
+}
+h3 {
+  font-size: 1.125rem;
+  margin: 1rem 0 0.5rem;
+}
+p {
+  margin: 0.5rem 0 1rem;
+  color: var(--ink);
+}
+.module-toc ol {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.25rem 0.75rem;
+  padding-left: 1rem;
+}
+
+/* Layout */
+.card-grid {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.card {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #f5f7fb;
+}
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+.card-front {
+  padding: 1rem;
+  min-height: 140px;
+  display: grid;
+  align-content: start;
+  gap: 0.25rem;
+}
+.card-front p {
+  color: var(--ink-muted);
+  margin: 0;
+}
+.card-back {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: linear-gradient(-45deg, #0a6cff 0%, #0b46a0 100%);
+  color: #f5f7fb;
+  transform: translateY(96%);
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  padding: 1rem;
+}
+
+.card-back * {
+  color: inherit;
+}
+
+.card:hover .card-back {
+  transform: translateY(0);
+}
+
+/* Figures and asides */
+figure {
+  margin: 1rem 0;
+}
+figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+}
+figcaption {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  margin-top: 0.25rem;
+}
+aside.callout {
+  border-left: 4px solid var(--brand);
+  background: #eef4ff;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
